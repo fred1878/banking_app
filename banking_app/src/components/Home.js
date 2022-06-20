@@ -17,16 +17,15 @@ const [accountInfo, setAccountInfo] = useState([])
                 <li><Link to='/login'>Login</Link></li>
             </ul>
         <Routes>
-            
+            {/* <Route path='/' element={<Home/>}/> */}
             <Route path='/login' element={<Login isLoggedIn={isLoggedIn}
             setIsLoggedIn={setIsLoggedIn}
             accountInfo={accountInfo}
             setAccountInfo={setAccountInfo}
             />} />
-            <Route path='/accountholder' element={<AccountHolder 
+            <Route path='/accountholder/*' element={<AccountHolder 
             accountInfo={accountInfo} 
             />}/>
-            <Route path='/accountpage' element={<AccountPageContainer />} />
         </Routes>
         </>
 

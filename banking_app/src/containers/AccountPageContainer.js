@@ -3,16 +3,17 @@ import AccountPagePaymentList from "../components/AccountPage/AccountPagePayment
 import AccountPageSubscriptionList from "../components/AccountPage/AccountPageSubscriptionList";
 import { useState, useEffect } from 'react';
 
-const AccountPageContainer = () => {
+const AccountPageContainer = ({account, setAccount}) => {
   
-  const [account, setAccount] = useState();
-  const testAccountId = "10";
 
-  useEffect(() => {
-    fetch("http://localhost:8080/accounts/" + testAccountId)
-      .then(response => response.json())
-      .then(data => console.log(data))
-  })
+  // useEffect(() => {
+  //   fetch("http://localhost:8080/accounts/" + testAccountId)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setAccount(data);
+  //     })
+      
+  // }, [testAccountId])
 
   return(
     <>
