@@ -1,7 +1,7 @@
 import Login from "./Login"
 
-const Home () = () => {
-  
+const Home = () => {
+    
 }
 
 export default Home;
