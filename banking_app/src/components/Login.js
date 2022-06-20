@@ -1,14 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import AccountHolder from "./AccountHolder";
-import { Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom'
-import AccountPageContainer from '../containers/AccountPageContainer'
-import Home from "./Home";
+import { BrowserRouter as Router, Route, Link, Navigate, useNavigate, Routes } from 'react-router-dom'
 
 
-const Login = () => {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [accountInfo, setAccountInfo] = useState([])
+const Login = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo}) => {
+  const navigate = useNavigate();
 
     const loginByName = () => {
       const name = loginName.current.value
@@ -17,11 +13,9 @@ const Login = () => {
       .then(data => {
         if(data[0].name == name){
           setIsLoggedIn(true)
-          setAccountInfo(data)
+          setAccountInfo(data[0])
           document.getElementById('greeting').innerText = 'Welcome ' + name 
-          let p = document.createElement("p")
-          p.innerHTML = "<a href='/accountholder'>Go to Account</a>"
-          document.getElementById('greeting').appendChild(p)
+          navigate('/accountholder', {replace: true})
         }
       })
     }
@@ -46,11 +40,6 @@ const Login = () => {
         <h1>LOGIN PAGE</h1>
         <div id="greeting"></div>
         <input ref={loginName} type="text" placeholder="Enter login name"></input><button onClick={loginByName}>Login</button>
-          <Routes>
-            <Route path='/accountholder' element={<AccountHolder accountInfo={accountInfo}/>}/>
-            <Route path='/home' element={<Home/>}/>
-            {/* <Route path='/account' element={<AccountPageContainer/>}>Account</Route> */}
-          </Routes>
           <button id="logout" onClick={logout}>Logout</button>
         
       </>

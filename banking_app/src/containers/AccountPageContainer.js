@@ -6,13 +6,13 @@ import { useState, useEffect } from 'react';
 const AccountPageContainer = () => {
   
   const [account, setAccount] = useState();
-  const testAccountId = "9";
+  const testAccountId = "11";
 
   useEffect(() => {
     fetch("http://localhost:8080/accounts/" + testAccountId)
       .then(response => response.json())
       .then(data => console.log(data))
-  }, [testAccountId])
+  })
 
   return(
     <>
