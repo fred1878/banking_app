@@ -1,12 +1,23 @@
 
+import AccountPageSubscription from './AccountPageSubscription'
 
-const AccountPageSubscriptionList = () => {
-  
+const AccountPageSubscriptionList = ({account}) => {
+
+  const subscriptions = account.subscriptions;
+  const subscriptionComponents = subscriptions.map(subscription => {
+    return(
+      <AccountPageSubscription
+        key={subscription.id}
+        subscription={subscription}/>
+    )
+  });
+
   return(
-    <>
-      <p>Hello from AccountPageSubscriptionList!</p>
-    </>
+    <div id="subscriptions-section">
+      <h3>Subscriptions</h3>
+      <div id='subscription-list'>{subscriptionComponents}</div>
+    </div>
   )
 }
-
+  
 export default AccountPageSubscriptionList;

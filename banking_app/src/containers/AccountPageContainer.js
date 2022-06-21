@@ -1,7 +1,6 @@
 import AccountDetails from "../components/AccountPage/AccountDetails";
 import AccountPagePaymentList from "../components/AccountPage/AccountPagePaymentList";
 import AccountPageSubscriptionList from "../components/AccountPage/AccountPageSubscriptionList";
-import { useState, useEffect } from 'react';
 
 const AccountPageContainer = ({account, setAccount}) => {
   

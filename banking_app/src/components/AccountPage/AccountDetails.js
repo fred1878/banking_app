@@ -3,7 +3,7 @@
 const AccountDetails = ({account}) => {
   
   const convertAccountType = (type) => {
-    if (type == "JOINT_ACCOUNT")
+    if (type === "JOINT_ACCOUNT")
       return "JOINT ACCOUNT"
     else return "BASIC ACCOUNT"
   }

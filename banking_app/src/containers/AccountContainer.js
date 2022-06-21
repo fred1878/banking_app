@@ -1,6 +1,4 @@
-import { Routes, Route, useNavigate} from "react-router-dom"
-import { useState } from "react";
-import AccountPageContainer from "./AccountPageContainer";
+import {useNavigate} from "react-router-dom"
 
 const AccountContainer = ({accountInfo,account,setAccount}) => {
 
@@ -14,7 +12,7 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
         let acc = ''
         for(let i = 0; i < accountInfo.accounts.length;i++){
             acno = accountInfo.accounts[i].accountNumber
-            if(acno == click)acc = accountInfo.accounts[i]
+            if(acno === click)acc = accountInfo.accounts[i]
         }
         setAccount(acc)
         navigate(`/accountpage/${click}`,{replace: false})

@@ -12,10 +12,10 @@ const AccountPagePaymentList = ({account}) => {
   });
 
   return(
-    <>
-      <h3></h3>
+    <div id="payments-section">
+      <h3>Payments</h3>
       <div id='payment-list'>{paymentComponents}</div>
-    </>
+    </div>
   )
 }
   
