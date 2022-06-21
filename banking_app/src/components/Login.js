@@ -22,7 +22,12 @@ const Login = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo}) => {
 
 return(
   <>
-  <div className="LoginContainer">
+	<div className="HomepageHeading" >
+  		<h1>Welcome To Online Banking
+		<span>Please login BELOW to continue</span>
+  		</h1>
+	</div>
+  	<div className="LoginContainer">
 	  <div className="screen">
 		  <div className="screen__content">
 			  <form className="login">
@@ -49,12 +54,5 @@ return(
 
 }
 
-// return(
-//    <>
-//      <h1>LOGIN PAGE</h1>
-//      <div id="greeting"></div>
-//     <input ref={loginName} type="text" placeholder="Enter login name"></input><button onClick={loginByName}>Login</button>
-//    </>
-// )
 
 export default Login;

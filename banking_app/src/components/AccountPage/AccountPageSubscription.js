@@ -1,4 +1,4 @@
-
+import Moment from "react-moment";
 
 const AccountPageSubscription = ({subscription}) => {
   const formatBalance = new Intl.NumberFormat('en-UK', {
@@ -16,10 +16,10 @@ const AccountPageSubscription = ({subscription}) => {
         <div className="price">
           <p>{formatBalance.format(subscription.price)}</p>
         </div>
-        <p>{subscription.dateOfPayment}</p>
+        <p>{<Moment format="D MMM YYYY">{subscription.date_of_payment}</Moment>}</p>
       </div>
     </div>
-
+  // {<Moment format="DD/MM/YY">{subscription.date_of_payment}</Moment>}
     
   )
 }

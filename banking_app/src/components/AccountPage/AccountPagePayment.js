@@ -1,3 +1,4 @@
+import Moment from "react-moment";
 
 
 const AccountPagePayment = ({payment}) => {
@@ -15,10 +16,12 @@ const AccountPagePayment = ({payment}) => {
       </div>
       <div id='payment-right'>
         <p>{formatBalance.format(payment.amount)}</p>
-        <p>{payment.date}</p>
+        <p> {<Moment format="D MMM YYYY">{payment.date}</Moment>}</p>
       </div>
     </div>
     )
   }
+    // {<Moment format="DD/MM/YY">{payment.date}</Moment>}
+
   
   export default AccountPagePayment;

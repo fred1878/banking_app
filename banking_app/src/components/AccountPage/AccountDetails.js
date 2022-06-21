@@ -21,19 +21,24 @@ const AccountDetails = ({account}) => {
   }
 
   return(
-    <>
-      <h3>{account.accountNumber}</h3>
-      <p>{convertAccountType(account.accountType)}</p>
-      {/* <p>Balance : {new Intl.NumberFormat('en-UK', {style: 'currency',currency: 'GBP',}).format(account.balance)}</p> */}
-      <p>Account Balance : {formatBalance.format(account.balance)}</p>
-      <p>{isDebit(account.isDebit)}</p>
-      <p>Card Details:</p>
-      <ul>
-        <li><p>CVC: {account.cvc}</p></li>
-        <li><p>Expiration Date: {account.expirationDate}</p></li>
-        <li><p>Pin Number: {account.pinNumber}</p></li>
-      </ul>
-    </>
+    <div id='account-details-container'>
+      <div id='account-details-left'>
+        <h3 id='account-title'>{account.accountNumber}</h3>
+        <p>{convertAccountType(account.accountType)}</p>
+        <div id='account-card-details'>
+          <p>Card Details:</p>
+          <ul>
+            <li><p>{isDebit(account.debit)}</p></li>
+            <li><p>CVC: {account.cvc}</p></li>
+            <li><p>Expiration Date: {account.expirationDate}</p></li>
+            <li><p>Pin Number: {account.pinNumber}</p></li>
+          </ul>
+        </div>
+      </div>
+      <div id='account-details-right'>
+        <p>Balance : {formatBalance.format(account.balance)}</p>
+      </div>
+    </div>
   )
   }
   

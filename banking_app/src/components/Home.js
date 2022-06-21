@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import AccountHolder from "./AccountHolder";
 import CreateAccountHolder from "./CreateAccountHolder";
 
+
 const Home = () => {
 
 const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -24,6 +25,17 @@ const logout = () => {
     setAccountInfo([])
 }
 
+const postAccountHolder = (newAccountHolder) => {
+    fetch('http://localhost:8080/account_holders',{
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(newAccountHolder)
+    })
+    .then(response => response.JSON)
+}
+
+
+
     return(
         <>
             <div className="topnav">
@@ -34,6 +46,7 @@ const logout = () => {
                     {isLoggedIn ? <a><Link to={'/accountholder'}>Logged in as {accountInfo.name}</Link></a> : <></>}
                 </div>
             </div>
+
         <Routes>
             <Route path='/login' element={<Login 
             isLoggedIn={isLoggedIn}
@@ -51,6 +64,7 @@ const logout = () => {
             />}/>
             <Route path='/accountpage/*' element={<AccountPageContainer account={account} setAccount={setAccount}/>} /> 
             <Route path='/createaccountholder' element={<CreateAccountHolder
+            postAccountHolder={postAccountHolder}
             isLoggedIn={isLoggedIn}
             setIsLoggedIn={setIsLoggedIn}
             accountInfo={accountInfo}

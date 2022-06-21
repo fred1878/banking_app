@@ -4,8 +4,21 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
 
     const navigate = useNavigate()
 
-    const data = accountInfo.accounts
+    const accounts = accountInfo.accounts
 
+    const accountNumberList = accounts.map(account => account.accountNumber);
+
+    // const handleClick = (event) => {
+    //     let click = `${event.target.innerText}`
+    //     let acno = ''
+    //     let acc = ''
+    //     for(let i = 0; i < accountInfo.accounts.length;i++){
+    //         acno = accountInfo.accounts[i].accountNumber
+    //         if(acno === click)acc = accountInfo.accounts[i]
+    //     }
+    //     setAccount(acc)
+    //     navigate(`/accountpage/${click}`,{replace: false})
+    // }
     const handleClick = (event) => {
         let click = `${event.target.innerText}`
         let acno = ''
@@ -14,9 +27,18 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
             acno = accountInfo.accounts[i].accountNumber
             if(acno === click)acc = accountInfo.accounts[i]
         }
-        setAccount(acc)
-        navigate(`/accountpage/${click}`,{replace: false})
+        fetch('http://localhost:8080/accounts/' + acc.id)
+          .then(response => response.json())
+          //.then(data => console.log(data))
+          .then(data => {
+            setAccount(data);
+            navigate(`/accountpage/${click}`,{replace: false});
+        })
+        
+        
     }
+
+
 
     return (
         <>
@@ -28,7 +50,7 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
                         <th>Balance</th>
                         <th>Debit/Credit</th>
                     </tr>
-                    {data.map((val,key) => {
+                    {accounts.map((val,key) => {
                         return(
                             <tr key={key}>
                                 <td id="accountNumber" onClick={handleClick}>{val.accountNumber}</td>
