@@ -8,12 +8,19 @@ const AccountPageSubscription = ({subscription}) => {
   //formatBalance.format(payment.price)
   return(
     <div className="subscription-item">
-      <h4>{subscription.name}</h4>
-      <p>{formatBalance.format(subscription.price)}</p>
-      <p>{subscription.dateOfPayment}</p>
-      <p>{subscription.category}</p>
-      <p>{subscription.isActive}</p>
+      <div id="subscription-left">
+        <h4>{subscription.name}</h4>
+        <p>{subscription.category}</p>
+      </div>
+      <div id="subscription-right">
+        <div className="price">
+          <p>{formatBalance.format(subscription.price)}</p>
+        </div>
+        <p>{subscription.dateOfPayment}</p>
+      </div>
     </div>
+
+    
   )
 }
 

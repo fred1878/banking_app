@@ -9,6 +9,7 @@ const AccountPageSubscriptionList = ({account}) => {
       <AccountPageSubscription
         key={subscription.id}
         subscription={subscription}/>
+
     )
   });
 

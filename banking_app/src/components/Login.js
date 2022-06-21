@@ -13,7 +13,6 @@ const Login = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo}) => {
         if(data[0].name === name){
           setIsLoggedIn(true)
           setAccountInfo(data[0])
-          document.getElementById('greeting').innerText = 'Welcome ' + name 
           navigate('/accountholder', {replace: true})
         }
       })

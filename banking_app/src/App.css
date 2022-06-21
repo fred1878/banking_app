@@ -73,6 +73,7 @@ h1 {
 
 #accountNumber {
   text-decoration: underline;
+  color: blue;
 } 
 
 table {
@@ -100,7 +101,10 @@ td {
   background-color: rgba(255,255,255,0.5);
   border-radius: 20px;
   text-align: center;
+}
 
+#payments-section > h3, #subscriptions-section > h3 {
+  margin:10px;
 }
 
 #payment-list, #subscription-list {
@@ -110,31 +114,51 @@ td {
   text-align: center;
 }
 
-.payment-item {
+.payment-item, .subscription-item {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: white;
-  border:black;
-  border-style: dashed;
-  border-radius: 20;
+  border:rgba(20, 20, 20, 0.3);
+  border-style: solid;
+  border-radius: 10px;
   margin: 10px;
+  margin-top:0px;
   width:95%;
+  height: 80px;
 }
 
-#payment-left {
+
+#payment-left, #subscription-left {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: left;
+	text-align: left;
+	margin:10px;
 }
 
-#payment-right {
+#payment-right, #subscription-right {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: right;
+	text-align:right;
+	margin: 10px;
 }
 
-
-
+#payment-left > h4, #subscription-left > h4{
+  font-size: 25px;
+}
+#payment-left > p, #subscription-left > p{
+  font-size: 15px;
+}
+#payment-right > p, #subscription-right > p{
+  font-size: 20px;
+}
+.price {
+ font-weight: bold;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
