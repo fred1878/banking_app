@@ -8,6 +8,7 @@ const Home = () => {
 
 const [isLoggedIn, setIsLoggedIn] = useState(false)
 const [accountInfo, setAccountInfo] = useState([])
+const [account, setAccount] = useState([]);
 
 
     return(
@@ -22,10 +23,13 @@ const [accountInfo, setAccountInfo] = useState([])
             setIsLoggedIn={setIsLoggedIn}
             accountInfo={accountInfo}
             setAccountInfo={setAccountInfo}
+            account={account} setAccount={setAccount}
             />} />
             <Route path='/accountholder/*' element={<AccountHolder 
             accountInfo={accountInfo} 
+            account={account} setAccount={setAccount}
             />}/>
+            <Route path='/accountpage/*' element={<AccountPageContainer account={account} setAccount={setAccount}/>} /> 
         </Routes>
         </>
 

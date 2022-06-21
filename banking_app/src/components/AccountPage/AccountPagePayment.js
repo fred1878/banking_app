@@ -1,9 +1,14 @@
 
 
-const AccountPagePayment = () => {
+const AccountPagePayment = ({payment}) => {
   
     return(
-      <p>Hello from AccountPagePayment</p>
+      <div className="payment-item">
+        <h4>{payment.name}</h4>
+        <p>{payment.amount}</p>
+        <p>{payment.date}</p>
+        <p>{payment.category}</p>
+      </div>
     )
   }
   

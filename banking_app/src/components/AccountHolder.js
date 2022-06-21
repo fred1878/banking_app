@@ -1,6 +1,6 @@
 import AccountContainer from '../containers/AccountContainer'
 
-const AccountHolder = ({accountInfo}) => {
+const AccountHolder = ({accountInfo,account,setAccount}) => {
   return(
     <>
     <div>
@@ -11,7 +11,7 @@ const AccountHolder = ({accountInfo}) => {
       <p>Address: {accountInfo.address}</p>
       <p>Accounts: {accountInfo.accounts.length}</p>
     </div>
-    <AccountContainer accountInfo={accountInfo}/>
+    <AccountContainer accountInfo={accountInfo} account={account} setAccount={setAccount}/>
     </>
 
   )

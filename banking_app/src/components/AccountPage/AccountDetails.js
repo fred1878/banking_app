@@ -29,7 +29,7 @@ const AccountDetails = ({account}) => {
       <p>{isDebit(account.isDebit)}</p>
       <p>Card Details:</p>
       <ul>
-        <li><p>CVC: {account.CVC}</p></li>
+        <li><p>CVC: {account.cvc}</p></li>
         <li><p>Expiration Date: {account.expirationDate}</p></li>
         <li><p>Pin Number: {account.pinNumber}</p></li>
       </ul>

@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Route, Link, Navigate, useNavigate, Routes } from 'react-router-dom'
 
-
-
 const Login = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo}) => {
   const navigate = useNavigate();
 
