@@ -2,19 +2,23 @@ import NewSubPopup from "./NewSubPopup";
 import useModal from "../../hooks/useModal";
 import { useState } from "react";
 
-const NewSubscriptionButton = () => {
+const NewSubscriptionButton = ({accountId,account, setAccount}) => {
   const { isShowing, toggle } = useModal();
   const [stateSub, setStateSub] = useState({
     name: '',
     category: '',
-    price: '',
+    price: 0,
     date_of_payment: '',
     is_active: true,
-    account: '',
+    account: {id:accountId},
 })
-  const handleNewSubscription = (event) => {
-    event.preventDefault();
-
+  const postSubscription = (newSubscription) => {
+    fetch("http://localhost:8080/subscriptions", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newSubscription)
+    })
+      .then(setAccount(account))
     console.log("new subscription added")
   }
 
@@ -25,7 +29,10 @@ const NewSubscriptionButton = () => {
         <p>+ Add Subscription</p> 
       </div> 
       <NewSubPopup isShowing={isShowing}
-                        toggle={toggle}/>
+                        toggle={toggle}
+                        stateSub={stateSub}
+                        setStateSub={setStateSub}
+                        postSubscription={postSubscription}/>
     </>
   )
 

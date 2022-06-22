@@ -2,7 +2,7 @@
 import AccountPageSubscription from './AccountPageSubscription'
 import NewSubscriptionButton from './NewSubscriptionButton'
 
-const AccountPageSubscriptionList = ({account}) => {
+const AccountPageSubscriptionList = ({account, setAccount}) => {
 
   const subscriptions = account.subscriptions;
   const subscriptionComponents = subscriptions.map(subscription => {
@@ -19,7 +19,7 @@ const AccountPageSubscriptionList = ({account}) => {
       <h3>Subscriptions</h3>
       <div id='subscription-list'>
         {subscriptionComponents}
-        <NewSubscriptionButton />
+        <NewSubscriptionButton accountId={account.id} account={account} setAccount={setAccount}/>
       </div>
     </div>
   )

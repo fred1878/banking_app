@@ -25,8 +25,8 @@ const Login = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo}) => {
 return(
   <>
 	<div className="HomepageHeading" >
-  		<h1>Welcome To Online Banking
-		<span>Please login BELOW to continue</span>
+  		<h1 className="homepageMainHeading">Welcome To Online Banking
+		<span className="homepageSubHeading">Please login BELOW to continue</span>
   		</h1>
 	</div>
   	<div className="LoginContainer">

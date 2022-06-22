@@ -8615,3 +8615,18 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection wa
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 17 more
+2022-06-22 17:44:07 jdbc[1292]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ACCOUNT_NUMBER CHARACTER VARYING(8)": "'103731437' (9)"; SQL statement:
+insert into accounts (account_number, account_type, balance, cvc, expiration_date, is_debit, pin_number, relationship, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-22 17:45:25 jdbc[1292]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ACCOUNT_NUMBER CHARACTER VARYING(8)": "'164403072' (9)"; SQL statement:
+insert into accounts (account_number, account_type, balance, cvc, expiration_date, is_debit, pin_number, relationship, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-22 17:46:56 jdbc[1292]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ACCOUNT_NUMBER CHARACTER VARYING(8)": "'165825531' (9)"; SQL statement:
+insert into accounts (account_number, account_type, balance, cvc, expiration_date, is_debit, pin_number, relationship, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-22 17:49:57 jdbc[1292]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ACCOUNT_NUMBER CHARACTER VARYING(8)": "'182340912' (9)"; SQL statement:
+insert into accounts (account_number, account_type, balance, cvc, expiration_date, is_debit, pin_number, relationship, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-22 17:54:09 jdbc[1292]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ACCOUNT_NUMBER CHARACTER VARYING(8)": "'140671707' (9)"; SQL statement:
+insert into accounts (account_number, account_type, balance, cvc, expiration_date, is_debit, pin_number, relationship, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]

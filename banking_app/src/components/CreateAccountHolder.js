@@ -46,6 +46,13 @@ const handleFormSubmit = (event) => {
 
 return(
 <>
+<div className="HomepageHeading" >
+    <h1 className="homepageMainHeading">Create a new Account
+    <span className="homepageSubHeading">Please enter your details below</span>
+    </h1>
+</div>
+
+
 <div className="LoginContainer">
 	<div className="screen">
 		<div className="screen__content">

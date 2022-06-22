@@ -1,4 +1,5 @@
 import {useNavigate} from "react-router-dom"
+import {useEffect} from 'react';
 
 const AccountContainer = ({accountInfo,account,setAccount}) => {
 
@@ -8,17 +9,6 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
 
     const accountNumberList = accounts.map(account => account.accountNumber);
 
-    // const handleClick = (event) => {
-    //     let click = `${event.target.innerText}`
-    //     let acno = ''
-    //     let acc = ''
-    //     for(let i = 0; i < accountInfo.accounts.length;i++){
-    //         acno = accountInfo.accounts[i].accountNumber
-    //         if(acno === click)acc = accountInfo.accounts[i]
-    //     }
-    //     setAccount(acc)
-    //     navigate(`/accountpage/${click}`,{replace: false})
-    // } 
     const handleClick = (event) => {
         let click = `${event.target.innerText}`
         let acno = ''
@@ -34,10 +24,12 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
             setAccount(data);
             navigate(`/accountpage/${click}`,{replace: false});
         })
-        
-        
     }
-
+    // useEffect(()=>{
+    //     fetch("http://localhost:8080/accounts/" + account.id)
+    //         .then(response => response.json())
+    //         .then(data => setAccount(data))
+    // },[account])
 
 
     return (

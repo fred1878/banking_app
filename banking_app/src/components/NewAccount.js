@@ -1,18 +1,64 @@
-const NewAccount = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, account, setAccount}) => {
-    
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+const NewAccount = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, account, setAccount,postAccount}) => {
+
+    const navigate = useNavigate()
+    const generateAccountNumber = () => {
+        return Math.floor(Math.random()*(99999999-9999999))+100000000;
+    }
+
+    const generateCVC = () => {
+        return Math.floor(Math.random()*(999-99))+100;
+    }
+
+    const generatePinNumber = () => {
+        return Math.floor(Math.random()*(9999-999))+1000;
+    }
+    
+    const [stateAccount, setStateAccount] = useState({
+        balance: 0,
+        accountNumber: generateAccountNumber(),
+        payments: [],
+        expirationDate: 1227,
+        cvc: generateCVC(),
+        pinNumber: generatePinNumber(),
+        subscriptions: [],
+        accountType: '',
+        accountHolders: [
+            {
+            id: accountInfo.id
+            }],
+        debit: true
+    })
+
+    const handleAccountType = (event) => {
+        let copiedAccount = {...stateAccount}
+        copiedAccount.accountType = event.target.value
+        setStateAccount(copiedAccount)
+    }
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        postAccount(stateAccount)
+        navigate('/accountholder', {replace: true})
+    }
 
     return(
     <>
     <div className="LoginContainer">
 	    <div className="screen">
 		    <div className="screen__content">
-			    <form className="login">
-				    <div className="login__field">
-					    <i className="login__icon fas fa-user"></i>
-  					    <input type="text" className="login__input" placeholder="Enter Name" />
-	  			    </div>
-		  		    <button className="button login__submit">
+			    <form className="login" onSubmit={handleFormSubmit}>
+                    <div>
+                    <label htmlFor="accountType">Choose your Account Type</label>
+                    <select id="accountType" onChange={handleAccountType}>
+                        <option>Select One:</option>
+                        <option value={'BASIC_ACCOUNT'}>Basic Account</option>
+                        <option value={'JOINT_ACCOUNT'}>Joint Account</option>
+                    </select>
+                </div>
+		  		    <button className="button login__submit" type="submit">
 			  		    <span className="button__text">Create New Account</span>
 				  	    <i className="button__icon fas fa-chevron-right"></i>
 				    </button>				

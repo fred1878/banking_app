@@ -8,10 +8,6 @@ const AccountPageContainer = ({account, setAccount}) => {
   const newPayment = () => {
     fetch("http://localhost:8080/payments")
   }
-
-  const postSubscription =() => {
-    
-  }
   // useEffect(() => {
   //   fetch("http://localhost:8080/accounts/" + account.id)
   //     .then(response => response.json())
@@ -22,7 +18,7 @@ const AccountPageContainer = ({account, setAccount}) => {
     <>
       <AccountDetails account={account} />
       <div className="account-lists">
-        <AccountPageSubscriptionList account={account}/>
+        <AccountPageSubscriptionList account={account} setAccount={setAccount}/>
         <AccountPagePaymentList account={account} newPayment={newPayment}/>
       </div>
     </>

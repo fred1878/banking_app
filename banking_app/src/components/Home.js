@@ -44,6 +44,16 @@ const Home = () => {
             .then(response => response.JSON)
     }
 
+    const postAccount = (newAccount) => {
+        fetch('http://localhost:8080/accounts', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newAccount)
+        })
+            .then(response => response.JSON)
+            .then(data => console.log(data))
+    }
+
 
     return (
         <>
@@ -75,6 +85,17 @@ const Home = () => {
                 </div>
             </div> */}
 
+            <div className="footer">
+                <div id="footerButton"></div>
+                <div id="footerContainer">
+                    <div id="cont">
+                        <div className="footer_center">
+                            <h3 className="footerText">FFBanking: Brought to you by Ed, Pete and Hamza ~ Est Since 2022 ©</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <Routes>
                 <Route path='/' />
                 <Route path='/newaccount' element={<NewAccount
@@ -84,6 +105,7 @@ const Home = () => {
                     setAccountInfo={setAccountInfo}
                     account={account}
                     setAccount={setAccount}
+                    postAccount={postAccount}
                 />} />
                 <Route path='/login' element={<Login
                     isLoggedIn={isLoggedIn}

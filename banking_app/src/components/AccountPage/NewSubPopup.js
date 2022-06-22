@@ -5,8 +5,31 @@ import DatePicker from "react-datepicker";
 import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css"
 
-const NewSubPopup = ({ isShowing, toggle }) => {
+const NewSubPopup = ({ isShowing, toggle, stateSub, setStateSub, postSubscription }) => {
     const [startDate, setStartDate] = useState(new Date());
+
+
+    const handleChange = (event) => {
+        let propertyName = event.target.name;
+        let copiedSub = {...stateSub}
+        //console.log(event.target.name)
+        copiedSub[propertyName] = event.target.value;
+        setStateSub(copiedSub)
+        //console.log(JSON.stringify(copiedSub))
+    }
+
+    const handleDateChange = (event) => {
+        let copiedSub = {...stateSub}
+        //console.log(JSON.stringify(event).substring(1,11))
+        copiedSub.date_of_payment = JSON.stringify(event).substring(1,11)
+        setStateSub(copiedSub)
+    }
+
+    const handleFormSubmit = (event) => {
+      event.preventDefault();
+      postSubscription(stateSub)        
+      toggle()
+    }
 
     return (
         isShowing ? ReactDOM.createPortal(
@@ -22,12 +45,12 @@ const NewSubPopup = ({ isShowing, toggle }) => {
                         <h3>Add New Subscription</h3>
                         <form>
                             <label htmlFor='subscription-name'>Subscription Name</label>
-                            <input type='text' id='subscription-name' /><br />
+                            <input type='text' id='subscription-name' name='name' onChange={handleChange}/><br />
                             <label htmlFor='subscription-price'>Price</label>
-                            <input type='text' id='subscription-price' /><br />
+                            <input type='text' id='subscription-price' name='price' onChange={handleChange}/><br />
 
                             <label htmlFor='subscription-type-select'>Type</label>
-                            <select id="subscription-type-select">
+                            <select id="subscription-type-select" name='category' onChange={handleChange}>
                                 <option>Select One:</option>
                                 <option value={'BILLS'}>Bills</option>
                                 <option value={'ENTERTAINMENT'}>Entertainment</option>
@@ -39,10 +62,10 @@ const NewSubPopup = ({ isShowing, toggle }) => {
                                 <option value={'OTHER'}>Other</option>
                             </select>
 
-                            <DatePicker name="dob"
+                            <DatePicker name="date_of_payment"
                                 selected={startDate}
                                 onChange={(date) => setStartDate(date)}
-                                // onSelect={handleDateChange}
+                                onSelect={handleDateChange}
                                 peekNextMonth
                                 showMonthDropdown
                                 showYearDropdown
