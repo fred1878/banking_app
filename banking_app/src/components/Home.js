@@ -36,14 +36,14 @@ const Home = () => {
     }
 
     const deleteAccountHolder = (id) => {
-        console.log('deleting id '+id)
-      fetch('http://localhost:8080/account_holders/id='+id, {
-          method: 'DELETE',
-          headers: {"Content-Type": "application/json"}
-      })
-        .then(response => response.JSON)
+        console.log('deleting id ' + id)
+        fetch('http://localhost:8080/account_holders/id=' + id, {
+            method: 'DELETE',
+            headers: { "Content-Type": "application/json" }
+        })
+            .then(response => response.JSON)
     }
-    
+
 
     return (
         <>
@@ -58,26 +58,33 @@ const Home = () => {
                 </div>
             </div>
 
-        {/* <div class="homepageContainer">
-                <h2 class="mainTitle">FAMILY FUN BANKING</h2>
-                <h2 class="mainTitle">Lets keep it in the family</h2>
-                <div class="text">
-                    <div class="inner">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate tortor sit amet felis accumsan, at ornare diam placerat. Cras bibendum lobortis quam ut venenatis. Mauris eu mi in erat sagittis cursus. Vivamus in euismod diam, et interdum odio. Suspendisse vel rhoncus metus, eu auctor neque. Lorem ipsum dolor sit amet.
+            {/* (hover heading) */}
+            {/* <div className="homepageContainer">
+                <div className="box">
+
+                    <div className="mainTitle">
+                        <span className="block"></span>
+                        <h1 className="mainTitleText">FFBanking<span></span></h1>
                     </div>
+
+                    <div className="role">
+                        <div className="block"></div>
+                        <p className="subText">Lets keep it in the family</p>
+                    </div>
+
                 </div>
             </div> */}
 
             <Routes>
-                <Route path='/'/>
+                <Route path='/' />
                 <Route path='/newaccount' element={<NewAccount
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}
-                accountInfo={accountInfo}
-                setAccountInfo={setAccountInfo}
-                account={account}
-                setAccount={setAccount}
-                />}/>
+                    isLoggedIn={isLoggedIn}
+                    setIsLoggedIn={setIsLoggedIn}
+                    accountInfo={accountInfo}
+                    setAccountInfo={setAccountInfo}
+                    account={account}
+                    setAccount={setAccount}
+                />} />
                 <Route path='/login' element={<Login
                     isLoggedIn={isLoggedIn}
                     setIsLoggedIn={setIsLoggedIn}

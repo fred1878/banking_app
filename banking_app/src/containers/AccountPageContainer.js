@@ -6,9 +6,11 @@ import { useState, useEffect } from "react";
 const AccountPageContainer = ({account, setAccount}) => {
     
   const newPayment = () => {
-    fetch("http://localhost:8080/payments",
+    fetch("http://localhost:8080/payments")
+  }
+
+  const postSubscription =() => {
     
-    )
   }
   // useEffect(() => {
   //   fetch("http://localhost:8080/accounts/" + account.id)
