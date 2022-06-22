@@ -25,10 +25,10 @@ const AccountDetails = ({account}) => {
       <div id='account-details-left'>
         <h3 id='account-title'>{account.accountNumber}</h3>
         <p>{convertAccountType(account.accountType)}</p>
+            <li><p>{isDebit(account.debit)}</p></li>
         <div id='account-card-details'>
           <p>Card Details:</p>
           <ul>
-            <li><p>{isDebit(account.debit)}</p></li>
             <li><p>CVC: {account.cvc}</p></li>
             <li><p>Expiration Date: {account.expirationDate}</p></li>
             <li><p>Pin Number: {account.pinNumber}</p></li>

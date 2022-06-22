@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DatePicker from "react-datepicker"
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css"
 
 const CreateAccountHolder = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, postAccountHolder}) => {
 
 const navigate = useNavigate();
-
+const [startDate, setStartDate] = useState(new Date());
 const [stateAccountHolder, setStateAccountHolder] = useState({
     name: '',
     dob: '',
@@ -19,6 +21,12 @@ const handleChange = (event) => {
     let copiedAccountHolder = {...stateAccountHolder}
     copiedAccountHolder[propertyName] = event.target.value
     console.log(event.target.value)
+    setStateAccountHolder(copiedAccountHolder)
+}
+
+const handleDateChange = (event) => {
+    let copiedAccountHolder = {...stateAccountHolder}
+    copiedAccountHolder.dob = JSON.stringify(event).substring(1,11)
     setStateAccountHolder(copiedAccountHolder)
 }
 
@@ -46,17 +54,25 @@ return(
 					<i className="login__icon fas fa-user"></i>
   			        <input type="text" className="login__input" placeholder="Enter Name" name="name" value={stateAccountHolder.name} onChange={handleChange}/>
 	  			</div>
-                <div className="login__field">
+                {/* <div className="login__field">
 					<i className="login__icon fas fa-user"></i>
   					<input type="text" className="login__input" placeholder="Date of Birth YYYY-MM-DD" name="dob" value={stateAccountHolder.dob} onChange={handleChange}/>
-	  			</div>
-                <div>
-                
-                </div>
+	  			</div> */}
                 <div className="login__field">
 					<i className="login__icon fas fa-user"></i>
   					<input type="text" className="login__input" placeholder="Address" name="address" value={stateAccountHolder.address} onChange={handleChange}/>
 	  			</div>
+                <div>
+                <DatePicker name="dob"
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                onSelect={handleDateChange}
+                peekNextMonth
+                showMonthDropdown
+                showYearDropdown
+                dropdownMode="select"
+                />
+                </div>
                 <div>
                     <label htmlFor="employmentStatus">Choose your Employment Status:</label>
                     <select id="employmentStatus" onChange={handleEmployment}>

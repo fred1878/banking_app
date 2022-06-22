@@ -47,6 +47,264 @@ const postAccountHolder = (newAccountHolder) => {
                 </div>
             </div>
 
+{/*         <div class="content-width">
+                <div class="slideshow">
+                    <!-- Slideshow Items -->
+                    <div class="slideshow-items">
+                        <div class="item">
+                            <div class="item-image-container">
+                                <img class="item-image" src="https://static01.nyt.com/images/2016/08/04/multimedia/hijabiworld/hijabiworld-superJumbo.jpg" />
+                            </div>
+                            <!-- Staggered Header Elements -->
+                            <div class="item-header">
+                                <span class="vertical-part"><b>C</b></span>
+                                <span class="vertical-part"><b>L</b></span>
+                                <span class="vertical-part"><b>I</b></span>
+                                <span class="vertical-part"><b>E</b></span>
+                                <span class="vertical-part"><b>N</b></span>
+                                <span class="vertical-part"><b>T</b></span>
+                                <span class="vertical-part"><b>#1</b></span>
+                            </div>
+                            <!-- Staggered Description Elements -->
+                            <div class="item-description">
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>
+                                <span class="vertical-part">
+                                    <b>Client Testimonial </b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span> 
+                                <span class="vertical-part">
+                                    <b>Client Testimonial</b>
+                                </span>           
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-image-container">
+          <img class="item-image" src="https://www.universityofcalifornia.edu/sites/default/files/black-man-suit.jpg" />
+        </div>
+        <!-- Staggered Header Elements -->
+        <div class="item-header">
+          <span class="vertical-part"><b>C</b></span>
+          <span class="vertical-part"><b>L</b></span>
+          <span class="vertical-part"><b>I</b></span>
+          <span class="vertical-part"><b>E</b></span>
+          <span class="vertical-part"><b>N</b></span>
+          <span class="vertical-part"><b>T</b></span>
+          <span class="vertical-part"><b>#2</b></span>
+        </div>
+        <!-- Staggered Description Elements -->
+        <div class="item-description">
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+              <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-image-container">
+          <img class="item-image" src="https://media.istockphoto.com/photos/portrait-of-mature-businessman-smiling-in-office-picture-id1026529200?k=20&m=1026529200&s=612x612&w=0&h=cx6mXZkspERW9UAn-CEKCFdrtdsbb2wrlCJiraledg4=" />
+        </div>
+        <!-- Staggered Header Elements -->
+        <div class="item-header">
+          <span class="vertical-part"><b>C</b></span>
+          <span class="vertical-part"><b>L</b></span>
+          <span class="vertical-part"><b>I</b></span>
+          <span class="vertical-part"><b>E</b></span>
+          <span class="vertical-part"><b>N</b></span>
+          <span class="vertical-part"><b>T</b></span>
+          <span class="vertical-part"><b>#3</b></span>
+        </div>
+        <!-- Staggered Description Elements -->
+        <div class="item-description">
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+              <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span>
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+          <span class="vertical-part">
+            <b>Client Testimonial</b>
+          </span> 
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <ul>
+        <li class="control" data-index="0"></li>
+        <li class="control" data-index="1"></li>
+        <li class="control" data-index="2"></li>
+      </ul>
+    </div>
+  </div>
+</div> */}
+
         <Routes>
             <Route path='/login' element={<Login 
             isLoggedIn={isLoggedIn}

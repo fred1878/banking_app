@@ -1,4 +1,5 @@
 import AccountPagePayment from './AccountPagePayment'
+import NewPaymentButton from './NewPaymentButton';
 
 const AccountPagePaymentList = ({account}) => {
 
@@ -14,7 +15,10 @@ const AccountPagePaymentList = ({account}) => {
   return(
     <div id="payments-section">
       <h3>Payments</h3>
-      <div id='payment-list'>{paymentComponents}</div>
+      <div id='payment-list'>
+        {paymentComponents}
+        <NewPaymentButton />
+      </div>
     </div>
   )
 }

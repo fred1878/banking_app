@@ -108,7 +108,7 @@ td {
 	flex-direction: row;
 	justify-content: space-between;
 	list-style: none;
-	
+	width: 70%
 }
 
 #account-details-left {
@@ -121,7 +121,7 @@ td {
 }
 
 
-/*account lists*/
+/*account lists ------------------*/
 .account-lists {
   display: grid;
   grid-template-columns: 45% 45%;
@@ -185,11 +185,29 @@ td {
 #payment-left > p, #subscription-left > p{
   font-size: 15px;
 }
-#payment-right > p, #subscription-right > p{
+#payment-right > p, #subscription-right > p {
   font-size: 20px;
 }
-.price {
- font-weight: bold;
+
+/* new payment/ subscription buttons */
+
+.new-expense-button {
+  background-color: white;
+  border:rgba(20, 20, 20, 0.3);
+  border-style: solid;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top:0px;
+  width: calc(100% - 11.5px);
+  height: 80px;
+}
+
+.new-expense-button > p {
+	margin: 0;
+	position: absolute;
+	
+
+
 }
 
 /* ============= LOGIN PAGE ===========================================================================================*/

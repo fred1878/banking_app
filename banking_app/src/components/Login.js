@@ -14,6 +14,8 @@ const Login = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo}) => {
           setIsLoggedIn(true)
           setAccountInfo(data[0])
           navigate('/accountholder', {replace: true})
+        } else {
+          window.alert("Invalid name")
         }
       })
     }
