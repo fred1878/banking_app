@@ -4,11 +4,12 @@ import AccountPageSubscriptionList from "../components/AccountPage/AccountPageSu
 import { useState, useEffect } from "react";
 
 const AccountPageContainer = ({account, setAccount}) => {
-  
-  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
-  
-  const [actualAccount, setActualAccount] = useState([]);
-
+    
+  const newPayment = () => {
+    fetch("http://localhost:8080/payments",
+    
+    )
+  }
   // useEffect(() => {
   //   fetch("http://localhost:8080/accounts/" + account.id)
   //     .then(response => response.json())
@@ -20,7 +21,7 @@ const AccountPageContainer = ({account, setAccount}) => {
       <AccountDetails account={account} />
       <div className="account-lists">
         <AccountPageSubscriptionList account={account}/>
-        <AccountPagePaymentList account={account}/>
+        <AccountPagePaymentList account={account} newPayment={newPayment}/>
       </div>
     </>
   )

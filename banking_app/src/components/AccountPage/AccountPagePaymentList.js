@@ -1,7 +1,7 @@
 import AccountPagePayment from './AccountPagePayment'
 import NewPaymentButton from './NewPaymentButton';
 
-const AccountPagePaymentList = ({account}) => {
+const AccountPagePaymentList = ({account, newPayment}) => {
 
   const payments = account.payments;
   const paymentComponents = payments.map(payment => {
@@ -17,7 +17,7 @@ const AccountPagePaymentList = ({account}) => {
       <h3>Payments</h3>
       <div id='payment-list'>
         {paymentComponents}
-        <NewPaymentButton />
+        <NewPaymentButton newPayment={newPayment}/>
       </div>
     </div>
   )

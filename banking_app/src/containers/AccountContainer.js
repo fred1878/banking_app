@@ -18,7 +18,7 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
     //     }
     //     setAccount(acc)
     //     navigate(`/accountpage/${click}`,{replace: false})
-    // }
+    // } 
     const handleClick = (event) => {
         let click = `${event.target.innerText}`
         let acno = ''

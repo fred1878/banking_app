@@ -1,5 +1,6 @@
 
 import AccountPageSubscription from './AccountPageSubscription'
+import NewSubscriptionButton from './NewSubscriptionButton'
 
 const AccountPageSubscriptionList = ({account}) => {
 
@@ -16,7 +17,10 @@ const AccountPageSubscriptionList = ({account}) => {
   return(
     <div id="subscriptions-section">
       <h3>Subscriptions</h3>
-      <div id='subscription-list'>{subscriptionComponents}</div>
+      <div id='subscription-list'>
+        {subscriptionComponents}
+        <NewSubscriptionButton />
+      </div>
     </div>
   )
 }

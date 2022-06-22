@@ -100,7 +100,7 @@ public class Account {
 
     public String generateExpirationDate(){
         Random rnd = new Random();
-        int month = rnd.nextInt(13);
+        int month = rnd.nextInt(1,13);
         String month_s = String.format("%02d", month);
         int year = rnd.nextInt(22,27);
         String year_s = String.format("%02d", year);

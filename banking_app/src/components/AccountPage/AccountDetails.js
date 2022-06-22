@@ -1,3 +1,4 @@
+import Moment from "react-moment";
 
 
 const AccountDetails = ({account}) => {
@@ -30,8 +31,8 @@ const AccountDetails = ({account}) => {
           <p>Card Details:</p>
           <ul>
             <li><p>CVC: {account.cvc}</p></li>
-            <li><p>Expiration Date: {account.expirationDate}</p></li>
-            <li><p>Pin Number: {account.pinNumber}</p></li>
+            <li><p>Expires: <Moment parse='MMYY' format='MM/YY'>{account.expirationDate}</Moment></p></li>
+            <li><p>Pin: {account.pinNumber}</p></li>
           </ul>
         </div>
       </div>
