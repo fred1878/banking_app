@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import AccountHolder from "./AccountHolder";
 import CreateAccountHolder from "./CreateAccountHolder";
 import NewAccount from "./NewAccount";
+import SplashPage from "./SplashPage";
 
 
 const Home = () => {
@@ -32,7 +33,6 @@ const Home = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newAccountHolder)
         })
-            .then(response => response.JSON)
     }
 
     const deleteAccountHolder = (id) => {
@@ -41,7 +41,6 @@ const Home = () => {
             method: 'DELETE',
             headers: { "Content-Type": "application/json" }
         })
-            .then(response => response.JSON)
     }
 
     const postAccount = (newAccount) => {
@@ -50,8 +49,13 @@ const Home = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newAccount)
         })
-            .then(response => response.JSON)
-            .then(data => console.log(data))
+    }
+
+    const deleteAccount = (id) => {
+        fetch('http://localhost:8080/accounts/'+ id , {
+            method: 'DELETE',
+            headers: { "Content-Type": "application/json" }
+        })
     }
 
 
@@ -68,22 +72,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* (hover heading) */}
-            {/* <div className="homepageContainer">
-                <div className="box">
 
-                    <div className="mainTitle">
-                        <span className="block"></span>
-                        <h1 className="mainTitleText">FFBanking<span></span></h1>
-                    </div>
-
-                    <div className="role">
-                        <div className="block"></div>
-                        <p className="subText">Lets keep it in the family</p>
-                    </div>
-
-                </div>
-            </div> */}
 
             <div className="footer">
                 <div id="footerButton"></div>
@@ -97,7 +86,7 @@ const Home = () => {
             </div>
 
             <Routes>
-                <Route path='/' />
+                <Route path='/' element={<SplashPage/>}/>
                 <Route path='/newaccount' element={<NewAccount
                     isLoggedIn={isLoggedIn}
                     setIsLoggedIn={setIsLoggedIn}
@@ -124,6 +113,7 @@ const Home = () => {
                         setAccount={setAccount}
                         setAccountInfo={setAccountInfo}
                         deleteAccountHolder={deleteAccountHolder}
+                        deleteAccount={deleteAccount}
                     />} />
                 <Route path='/accountpage/*' element={<AccountPageContainer account={account} setAccount={setAccount} />} />
                 <Route path='/createaccountholder' element={<CreateAccountHolder

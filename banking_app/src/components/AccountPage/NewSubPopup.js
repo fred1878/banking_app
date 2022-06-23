@@ -23,10 +23,12 @@ const NewSubPopup = ({ isShowing, toggle, stateSub, setStateSub, postSubscriptio
         //console.log(JSON.stringify(event).substring(1,11))
         copiedSub.date_of_payment = JSON.stringify(event).substring(1,11)
         setStateSub(copiedSub)
+        console.log(stateSub)
     }
 
     const handleFormSubmit = (event) => {
       event.preventDefault();
+      console.log(stateSub, event.target)
       postSubscription(stateSub)        
       toggle()
     }
@@ -43,7 +45,7 @@ const NewSubPopup = ({ isShowing, toggle, stateSub, setStateSub, postSubscriptio
                             </button>
                         </div>
                         <h3>Add New Subscription</h3>
-                        <form>
+                        <form onSubmit={handleFormSubmit}>
                             <label htmlFor='subscription-name'>Subscription Name</label>
                             <input type='text' id='subscription-name' name='name' onChange={handleChange}/><br />
                             <label htmlFor='subscription-price'>Price</label>

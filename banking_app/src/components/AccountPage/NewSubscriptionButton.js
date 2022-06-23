@@ -1,6 +1,8 @@
 import NewSubPopup from "./NewSubPopup";
 import useModal from "../../hooks/useModal";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const NewSubscriptionButton = ({accountId,account, setAccount}) => {
   const { isShowing, toggle } = useModal();
@@ -11,15 +13,21 @@ const NewSubscriptionButton = ({accountId,account, setAccount}) => {
     date_of_payment: '',
     is_active: true,
     account: {id:accountId},
-})
+  })   
+  const navigate = useNavigate()
+
   const postSubscription = (newSubscription) => {
     fetch("http://localhost:8080/subscriptions", {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newSubscription)
     })
-      .then(setAccount(account))
-    console.log("new subscription added")
+      .then(() => {
+        let acno = account.accountNumber;
+        navigate('/accountpage/'+acno,{replace: true})
+        console.log(account);
+        setAccount(account);
+      })
   }
 
 

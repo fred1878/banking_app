@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import AccountContainer from '../containers/AccountContainer'
 import { Link } from 'react-router-dom'
+import Moment from "react-moment";
 
-const AccountHolder = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, account, setAccount, deleteAccountHolder}) => {
+
+const AccountHolder = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, account, setAccount, deleteAccountHolder, deleteAccount}) => {
 
   const navigate = useNavigate()
 
@@ -33,22 +35,22 @@ const AccountHolder = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, 
   }
 
   return(
-    <>
+    <div id='account-holder-container'>
     <a className="topnav-dropdown">
       <button className="dropbtn" onMouseOver={handleDropdownMouseOver}>Account Settings</button>
       <div className="topnav-dropdown-content">
         <a onMouseDown={handleDeleteAccountHolder}>Delete Account Holder</a>
-        <a><Link to={'/newaccount'}>Edit Account Holder</Link></a>
+        <a><Link to={'/newaccount'}>Create New Account</Link></a>
       </div>
     </a>
     <div className='accountholder'>
-      <p>Name: {accountInfo.name}</p>
-      <p>Date of Birth: {accountInfo.dob}</p>
+      <p id='holder-name'>{accountInfo.name}</p><br/>
+      <p>Date of Birth: <Moment format='DD-MM-YYYY'>{accountInfo.dob}</Moment></p>
       <p>Address: {accountInfo.address}</p>
     </div>
-    <AccountContainer accountInfo={accountInfo} account={account} setAccount={setAccount}/>
-    </>
-
+    <AccountContainer accountInfo={accountInfo} account={account} setAccount={setAccount} deleteAccount={deleteAccount} setAccountInfo={setAccountInfo}/>
+    </div>
+//<Moment format='DD-MM-YYY'>{accountInfo.dob}</Moment>
   )
 }
 

@@ -5,7 +5,7 @@ const NewAccount = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, acc
 
     const navigate = useNavigate()
     const generateAccountNumber = () => {
-        return Math.floor(Math.random()*(99999999-9999999))+100000000;
+        return Math.floor(Math.random()*(9999999-999999))+10000000;
     }
 
     const generateCVC = () => {
@@ -16,20 +16,21 @@ const NewAccount = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, acc
         return Math.floor(Math.random()*(9999-999))+1000;
     }
     
-    const [stateAccount, setStateAccount] = useState({
-        balance: 0,
-        accountNumber: generateAccountNumber(),
-        payments: [],
-        expirationDate: 1227,
-        cvc: generateCVC(),
-        pinNumber: generatePinNumber(),
-        subscriptions: [],
-        accountType: '',
-        accountHolders: [
+    const [stateAccount, setStateAccount] = useState(    {
+        "balance": 0,
+        "accountNumber": generateAccountNumber(),
+        "payments": [],
+        "expirationDate": "0526",
+        "cvc": generateCVC(),
+        "pinNumber": generatePinNumber(),
+        "subscriptions": [],
+        "accountType": "BASIC_ACCOUNT",
+        "accountHolders": [
             {
-            id: accountInfo.id
-            }],
-        debit: true
+                "id": accountInfo.id
+            }
+        ],
+        "debit": true
     })
 
     const handleAccountType = (event) => {

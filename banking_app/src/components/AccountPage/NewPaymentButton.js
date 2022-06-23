@@ -1,24 +1,46 @@
+import useModal from "../../hooks/useModal";
+import {useState} from 'react'
+import {useNavigate} from "react-router-dom"
+import NewPaymentPopup from './NewPaymentPopup'
 
 
-const NewPaymentButton = ({newPayment}) => {
-  
-  const handleNewPayment = (event) => {
-    event.preventDefault();
-    console.log("new payment added")
-    newPayment();
+const NewPaymentButton = ({setAccount, account, accountId}) => {
+  const { isShowing, toggle } = useModal();
+  const [statePayment, setStatePayment] = useState({
+    name: '',
+    category: '',
+    amount: 0,
+    date: '',
+    account: {id:accountId},
+  })   
+
+  const postPayment = (newPayment) => {
+    fetch("http://localhost:8080/payments", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newPayment)
+    })
+      .then(() => {
+        let acno = account.accountNumber;
+        //navigate('/accountpage/'+acno,{replace: true})
+        console.log(account);
+        setAccount(account);
+      })
   }
 
   return(
-    <div className='new-expense-button' >
-      <details> 
-        <summary>+ Add Payment</summary>
-        Enter details here
-        Hellooo<br/>
-        ahaaha
-        feqadas
-      </details>
-    </div>
+    <>
+      <div className='new-expense-button' onClick={toggle}>
+        <p>+ Add Payment</p> 
+      </div> 
+      <NewPaymentPopup isShowing={isShowing}
+                        toggle={toggle}
+                        statePayment={statePayment}
+                        setStatePayment={setStatePayment}
+                        postPayment={postPayment}/>
+    </>
   )
+
 
 }
 

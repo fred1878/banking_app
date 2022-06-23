@@ -96,7 +96,6 @@
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
-	color: #FFF;
 }
 
 .footer #footerButton {
@@ -139,6 +138,7 @@ body {
 	-ms-transition: all 1s ease;
 	transition: all 1s ease;
 	z-index: 999;
+	color: #FFF;
 }
 
 .footer:hover {
@@ -185,12 +185,24 @@ body {
 
 /* ============= ACCOUNT HOLDER ===========================================================================================*/
 
+#account-holder-container {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#holder-name {
+	font-size: 30px;
+	font-weight: bold;
+}
+
 .accountholder {
 	border: 2px solid #333;
-	width: 40%;
+	width: 50%;
 	margin: auto;
 	margin: 20px 30% 10px;
-	background-color: rgba(0, 0, 0, 0.05);
+	background-color: rgba(255,255,255, 0.5);
+	border-radius: 20px;
 }
 
 .accountholder p {
@@ -230,7 +242,7 @@ td {
 
 /*homepage Hover text*/
 
-/* @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
  * {
 	 margin: 0;
 	 padding: 0;
@@ -272,7 +284,7 @@ td {
  .homepageContainer .box .mainTitle .mainTitleText {
 	 font-family: 'Poppins';
 	 color: #fff;
-	 font-size: 32px;
+	 font-size: 42px;
 	 -webkit-animation: mainFadeIn 2s forwards;
 	 -o-animation: mainFadeIn 2s forwards;
 	 animation: mainFadeIn 2s forwards;
@@ -427,7 +439,7 @@ td {
 		 opacity: 1;
 		 bottom: 0px;
 	}
-} */
+}
 
 
 /* ============= ACCOUNT PAGE ===========================================================================================*/
@@ -566,19 +578,7 @@ td {
 	cursor: pointer;
 }
 
-details>summary {
-	margin: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-weight: bold;
-	font-size: 20px;
-	list-style: none;
-	cursor: pointer;
-}
-
-/* .new-expense-header > p{
+.new-expense-button > p{
   margin: 0;
   position: absolute;
   top:50%;
@@ -587,7 +587,7 @@ details>summary {
   font-weight: bold;
   font-size: 20px;
 
-} */
+}
 
 .modal-overlay {
 	position: fixed;

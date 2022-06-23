@@ -8630,3 +8630,9 @@ insert into accounts (account_number, account_type, balance, cvc, expiration_dat
 2022-06-22 17:54:09 jdbc[1292]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "ACCOUNT_NUMBER CHARACTER VARYING(8)": "'140671707' (9)"; SQL statement:
 insert into accounts (account_number, account_type, balance, cvc, expiration_date, is_debit, pin_number, relationship, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-23 09:30:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ACCOUNT_NUMBER CHARACTER VARYING(8)": "'104925532' (9)"; SQL statement:
+insert into accounts (account_number, account_type, balance, cvc, expiration_date, is_debit, pin_number, relationship, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-23 09:35:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "ACCOUNT_NUMBER CHARACTER VARYING(8)": "'128346537' (9)"; SQL statement:
+insert into accounts (account_number, account_type, balance, cvc, expiration_date, is_debit, pin_number, relationship, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-212]

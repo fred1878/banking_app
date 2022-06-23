@@ -1,13 +1,11 @@
 import {useNavigate} from "react-router-dom"
 import {useEffect} from 'react';
 
-const AccountContainer = ({accountInfo,account,setAccount}) => {
+const AccountContainer = ({accountInfo,account,setAccount,deleteAccount,setAccountInfo}) => {
 
     const navigate = useNavigate()
 
     const accounts = accountInfo.accounts
-
-    const accountNumberList = accounts.map(account => account.accountNumber);
 
     const handleClick = (event) => {
         let click = `${event.target.innerText}`
@@ -31,6 +29,17 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
     //         .then(data => setAccount(data))
     // },[account])
 
+    const handleDeleteAccount = (event) => {
+        deleteAccount(event.target.value)
+    }
+
+    useEffect(() => {
+        fetch("http://localhost:8080/account_holders/name=" + accountInfo.name)
+        .then(response => response.json())
+        .then(data => {
+            setAccountInfo(data[0])
+    })
+}, [accountInfo])
 
     return (
         <>
@@ -41,6 +50,7 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
                         <th>Account Type</th>
                         <th>Balance</th>
                         <th>Debit/Credit</th>
+                        <th>Delete Account</th>
                     </tr>
                     {accounts.map((val,key) => {
                         return(
@@ -49,6 +59,7 @@ const AccountContainer = ({accountInfo,account,setAccount}) => {
                                 <td>{val.accountType}</td>
                                 <td>{new Intl.NumberFormat('en-UK', {style: 'currency',currency: 'GBP'}).format(val.balance)}</td>
                                 <td>{val.debit ? 'Debit' : 'Credit'}</td>
+                                <td><button value={val.id} onClick={handleDeleteAccount}>Delete Account</button></td>
                             </tr>
                         )
                     })}
