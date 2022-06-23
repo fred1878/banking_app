@@ -16,9 +16,38 @@
 
 /*=========  TOP NAV  ==============================================================================*/
 
+img {
+	max-height: 70px;
+	position: absolute;
+	top:4.75%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+
 .topnav {
 	background-color: rgb(61, 3, 83);
 	overflow: hidden;
+	/* text-align: center; */
+}
+
+.topnav-element{
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	/* padding: 14px 16px; */
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav-element:hover {
+	background-color: rgb(243, 234, 113);
+	color: black;
+}
+
+.topnav-element.active {
+	background-color: #04AA6D;
+	color: white;
 }
 
 .topnav a {
@@ -26,13 +55,13 @@
 	display: block;
 	color: #f2f2f2;
 	text-align: center;
-	padding: 14px 16px;
+	padding: 28px 16px;
 	text-decoration: none;
 	font-size: 17px;
 }
 
 .topnav a:hover {
-	background-color: #ddd;
+	background-color: rgb(243, 234, 113);
 	color: black;
 }
 
@@ -79,7 +108,7 @@
 }
 
 .topnav-dropdown-content a:hover {
-	background-color: #ddd;
+	background-color: rgb(243, 234, 113);
 }
 
 .topnav-dropdown:hover .topnav-dropdown-content {
@@ -87,7 +116,8 @@
 }
 
 .topnav-dropdown:hover .dropbtn {
-	background-color: #3e8e41;
+	background-color: rgb(243, 234, 113);
+	color:#000;
 }
 
 /*=========  BOTTOM FOOTER  ==============================================================================*/
@@ -222,18 +252,26 @@ body {
 /* ============= ACCOUNT HOLDER ACCOUNT TABLE ===========================================================================================*/
 
 table {
-	border: 2px solid black;
+	padding:10px;
+	border-radius: 20px;
+	border: 1px solid rgb(167, 163, 163);
 	margin-left: auto;
 	margin-right: auto;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 th {
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid black;	text-decoration: none;
+
 }
 
 td {
-	text-align: center;
-}
+	text-align: center;	
+}	
+
+
+
+
 
 /* ============= HOME PAGE ===========================================================================================*/
 
@@ -331,9 +369,9 @@ td {
 	 animation: secFadeIn 2s forwards;
 	 animation-delay: 3.2s;
 	 opacity: 0;
-	 font-weight: 400;
+	 font-weight: bold;
 	 font-family: 'Lato';
-	 color: #fff;
+	 color: rgb(248, 240, 2);
 	 font-size: 12px;
 	 text-transform: uppercase;
 	 letter-spacing: 5px;

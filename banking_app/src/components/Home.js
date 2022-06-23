@@ -6,6 +6,7 @@ import AccountHolder from "./AccountHolder";
 import CreateAccountHolder from "./CreateAccountHolder";
 import NewAccount from "./NewAccount";
 import SplashPage from "./SplashPage";
+import image from "./image.png"
 
 
 const Home = () => {
@@ -61,14 +62,28 @@ const Home = () => {
 
     return (
         <>
-            <div className="topnav">
+            {/* <div className="topnav">
                 <a><Link to='/'>Home</Link></a>
                 {isLoggedIn ? (<a><Link to='/' onClick={logout}>Logout</Link></a>) : <a><Link to='/login'>Login</Link></a>}
                 {isLoggedIn ? <></> : (<a><Link to={'/createaccountholder'}>Create Account</Link></a>)}
+                <img src={image} alt="Our logo"></img>
                 <div className="topnav-right">
                     {isLoggedIn ? <a className="topnav-dropdown"><Link to={'/accountholder'}>Logged in as {accountInfo.name}</Link>
                     </a>
                         : <></>}
+                    
+                </div>
+            </div> */}
+            <div className="topnav">
+                <div className='topnav-element'><Link to='/'>Home</Link></div>
+                {isLoggedIn ? (<div className='topnav-element'><Link to='/' onClick={logout}>Logout</Link></div>) : <div className='topnav-element'><Link to='/login'>Login</Link></div>}
+                {isLoggedIn ? <></> : (<div className='topnav-element'><Link to={'/createaccountholder'}>Create Account</Link></div>)}
+                <img src={image} alt="Our logo"></img>
+                <div className="topnav-right">
+                    {isLoggedIn ? <div className="topnav-dropdown"><Link to={'/accountholder'}>Logged in as {accountInfo.name}</Link>
+                    </div>
+                        : <></>}
+                    
                 </div>
             </div>
 
@@ -79,7 +94,7 @@ const Home = () => {
                 <div id="footerContainer">
                     <div id="cont">
                         <div className="footer_center">
-                            <h3 className="footerText">FFBanking: Brought to you by Ed, Pete and Hamza ~ Est Since 2022 ©</h3>
+                            <h3 className="footerText">FFBanking: Brought to you by Ed, Pete and Hamza ~ Est 2022 ©</h3>
                         </div>
                     </div>
                 </div>

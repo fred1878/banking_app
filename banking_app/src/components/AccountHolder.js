@@ -44,9 +44,9 @@ const AccountHolder = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo, 
       </div>
     </a>
     <div className='accountholder'>
-      <p id='holder-name'>{accountInfo.name}</p><br/>
+      <br/><p id='holder-name'>{accountInfo.name}</p><br/>
       <p>Date of Birth: <Moment format='DD-MM-YYYY'>{accountInfo.dob}</Moment></p>
-      <p>Address: {accountInfo.address}</p>
+      <p>Address: {accountInfo.address}</p><br/>
     </div>
     <AccountContainer accountInfo={accountInfo} account={account} setAccount={setAccount} deleteAccount={deleteAccount} setAccountInfo={setAccountInfo}/>
     </div>
